@@ -8,7 +8,7 @@ import { fetchInterviewById, fetchCurrentUser } from '../services/api';
 import { PhoneIcon, UserIcon, CpuChipIcon, MicrophoneIcon, SpeakerWaveIcon } from '@heroicons/react/24/solid';
 
 
-const VAPI_PUBLIC_KEY = 'ff1f885b-5774-4575-bc62-3e5a80469eca'; 
+const VAPI_PUBLIC_KEY = import.meta.env.VITE_VAPI_PUBLIC_KEY;
 
 
 const formatTime = (totalSeconds) => {
