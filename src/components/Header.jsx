@@ -7,17 +7,17 @@ const Header = ({ showBackButton = false, backTo = '/dashboard', backText = 'Bac
   const handleLogout = () => {
     try {
       localStorage.removeItem('jwt_token');
-      // Also try to clear any global axios header if present
+     
       try {
         const api = require('../services/api');
         if (api && api.apiClient && api.apiClient.defaults && api.apiClient.defaults.headers) {
           delete api.apiClient.defaults.headers.common['Authorization'];
         }
       } catch (e) {
-        // ignore
+        
       }
     } catch (e) {
-      // ignore
+      
     }
     navigate('/login');
   };

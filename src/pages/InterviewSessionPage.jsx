@@ -134,7 +134,7 @@ ${topicsListText}
     - Conclude the interview politely: "Alright, thank you for your time today, ${candidateName}. The hiring team will review our conversation and get back to you. Have a great day!"
 `
             },
-            voice: { provider: 'playht', voiceId: 'jennifer' } // Free, reliable voice
+            voice: { provider: 'playht', voiceId: 'jennifer' } 
         };
         // --- END VAPI CONFIGURATION ---
         

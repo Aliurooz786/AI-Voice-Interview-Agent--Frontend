@@ -1,4 +1,4 @@
-
+// src/App.jsx
 import { Routes, Route, Navigate } from 'react-router-dom'
 import ProtectedRoute from './components/ProtectedRoute'
 import LoginPage from './pages/LoginPage'
@@ -6,6 +6,7 @@ import DashboardPage from './pages/DashboardPage'
 import CreateInterviewPage from './pages/CreateInterviewPage'
 import AllInterviewsPage from './pages/AllInterviewsPage'
 import InterviewSessionPage from './pages/InterviewSessionPage'
+import OAuth2RedirectHandler from './pages/OAuth2RedirectHandler' 
 
 function App() {
   return (
@@ -14,16 +15,18 @@ function App() {
         {/* Public Routes */}
         <Route path="/login" element={<LoginPage />} />
         <Route path="/" element={<Navigate to="/login" replace />} />
+        
+        <Route path="/oauth2/redirect" element={<OAuth2RedirectHandler />} />
 
-        {/* Protected Routes */}
+        {/* Protected Routes (Bina MainLayout ke) */}
         <Route element={<ProtectedRoute />}>
-          <Route path="/dashboard" element={<DashboardPage />} />
-          <Route path="/create-interview" element={<CreateInterviewPage />} />
-          <Route path="/all-interviews" element={<AllInterviewsPage />} />
-          <Route path="/interview-session/:interviewId" element={<InterviewSessionPage />} />
-          
-          {/* Redirect any unknown protected paths to dashboard */}
-          <Route path="*" element={<Navigate to="/dashboard" replace />} />
+            <Route path="/dashboard" element={<DashboardPage />} />
+            <Route path="/create-interview" element={<CreateInterviewPage />} />
+            <Route path="/all-interviews" element={<AllInterviewsPage />} />
+            <Route path="/interview-session/:interviewId" element={<InterviewSessionPage />} />
+            
+            {/* Catch-all for protected routes to redirect to Dashboard */}
+            <Route path="*" element={<Navigate to="/dashboard" replace />} />
         </Route>
       </Routes>
     </div>

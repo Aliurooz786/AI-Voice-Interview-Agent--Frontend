@@ -66,8 +66,8 @@ const CreateInterviewPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100"> {/* Added bg color */}
-      {/* Header */}
+    <div className="min-h-screen bg-gray-100"> 
+     
       <Header 
         showProfile={true}
         showBackButton={true}
@@ -75,7 +75,7 @@ const CreateInterviewPage = () => {
         backText="Back to Dashboard"
       />
 
-      {/* Main Content */}
+      
       <main className="max-w-3xl mx-auto px-4 py-8">
         <div className="bg-white rounded-lg shadow-xl p-8">
           <div className="flex items-center gap-3 mb-6">

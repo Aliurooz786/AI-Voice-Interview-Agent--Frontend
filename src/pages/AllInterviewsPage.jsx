@@ -54,7 +54,7 @@ const AllInterviewsPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100"> {/* Added bg color */}
+    <div className="min-h-screen bg-gray-100"> 
       <Header 
         showProfile={true}
         showBackButton={true} 
@@ -62,7 +62,7 @@ const AllInterviewsPage = () => {
         backText="Back to Dashboard" 
       />
 
-      {/* Main Content */}
+    
       <main className="max-w-6xl mx-auto px-4 py-8">
         <div className="bg-white rounded-lg shadow-xl p-8">
           <h2 className="text-2xl font-bold mb-6 text-gray-900">All Created Interviews</h2>
@@ -106,7 +106,7 @@ const AllInterviewsPage = () => {
                         </span>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        {interview.duration} {/* "minutes" hata diya gaya */}
+                        {interview.duration} 
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                         {formatDate(interview.createdAt)}
